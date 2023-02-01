@@ -2,7 +2,7 @@ python -m pip install rpy2==3.2.2
 
 python -m pip install shiny
 shiny create myapp
-shiny run --reload my_app/app.py
+shiny run --reload myapp/app.py
 
 python -m pip install shinylive
 shinylive export myapp docs

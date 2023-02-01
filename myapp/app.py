@@ -151,7 +151,7 @@ def server(input, output, session):
     @render.image
     async def gif() -> ImgData:
       choose = int(input.choose())
-      return {"src": "wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
+      return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
 
     @reactive.Effect
     def _():
