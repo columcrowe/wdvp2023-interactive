@@ -142,16 +142,27 @@ def server(input, output, session):
 
     @output
     @render.ui
-    async def calc():
+    def calc():
       choose = int(input.choose())-1
       perc_diff = types["ten_yr_diff"][choose]
       return [perc_diff if perc_diff!='' and perc_diff!='nan' else ""][0]
 
+    #@output
+    #@render.image
+    #def gif() -> ImgData:
+    #  choose = int(input.choose())
+    #  return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
+    
     @output
     @render.image
-    async def gif() -> ImgData:
-      choose = int(input.choose())
-      return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
+    def gif():
+        from pathlib import Path
+        dir = Path(__file__).resolve().parent
+        choose = int(input.choose())
+        dir=str(dir)
+        choose=str(choose)
+        img: ImgData = {"src": str(dir + "/gifs/wdv_2023_wjhl10y_"+choose+".gif"), "height": "100%", "width": "75%"}
+        return img
 
     @reactive.Effect
     def _():
