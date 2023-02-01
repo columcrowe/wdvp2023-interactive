@@ -23,7 +23,7 @@ app_ui = ui.page_fluid(
     }
     """
     ),
-    # ui.h2({"style": "text-align: center;"}, "WDVP 2023 - Interactive"),
+    ui.h2({"style": "text-align: center;"}, "WDVP 2023 - Interactive: Time Series Data Spirals"),
     ui.row(
         ui.column(
             6,
@@ -113,25 +113,42 @@ app_ui = ui.page_fluid(
             ),
         ),
 
-    # ui.row(
-    #     ui.column(
-    #         6,
-    #         ui.div(
-    #             {"class": "app-col"},
-    #             ui.output_ui("calc"),
-    #             ui.output_image("gif"),
-    #             #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
-    #             ),
-    #         ),
-    #     ui.column(
-    #         6,
-    #         ui.div(
-    #             {"class": "app-col"},
-    #             ui.output_image("image"),
-    #             #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
-    #             ),
-    #         ),  
-    #     ),
+    ui.row(
+        ui.column(
+            6,
+            ui.div(
+                {"class": "app-col"},
+                ui.p(
+                """
+                Interactive multi-view dynamic tool for the World Data Visualization Prize 2023 competition What Just Happened? concept and dataset.
+                """
+                ),
+                ui.p(
+                """
+                This visualization shows yearly differences between the years 2010 and 2020. Blues indicate % decreases, while reds show % increases. The application facilitates viewing changes in variables as time has progressed.
+                """
+                ),
+                ui.p(
+                """
+                These graphs are based on data from The World Data Visualization Prize (WDVP) 2023 and the data file used to create this visualization can be accessed here (https://github.com/columcrowe/wdvp2023-interactive).
+                """
+                ),
+                ui.p(
+                """
+                The inspiration for the format is the Climate Spiral visualization designed by climate scientist Ed Hawkins from the National Centre for Atmospheric Science, University of Reading.
+                """
+                ),
+                #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
+                ),
+            ),
+        ui.column(
+            6,
+            ui.div(
+                {"class": "app-col"},
+                #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
+                ),
+            ),  
+        ),
 
 )
 
