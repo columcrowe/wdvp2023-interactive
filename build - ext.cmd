@@ -33,3 +33,4 @@ ECHO %cd%
 PAUSE
 python -m pip install shinylive
 shinylive export myapp docs
+shiny run --reload myapp/app.py

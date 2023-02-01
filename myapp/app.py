@@ -103,6 +103,18 @@ app_ui = ui.page_fluid(
                 style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
                 ),
             ),
+            ui.column(
+                6,
+                ui.div(
+                    {"class": "app-col-custom"},
+                    # ui.p(
+                    #     """
+                    #     """,
+                    #     ),
+                    ui.output_image("image"),
+                style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
+                ),
+                ),
     ),
     ui.row(
             ui.column(
@@ -115,7 +127,7 @@ app_ui = ui.page_fluid(
                        ),
                     ui.output_ui("calc"),
                     ui.output_image("gif"),
-                    ui.output_image("image"),
+                    #ui.output_image("image"),
                     style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
                     ),
                     ),
