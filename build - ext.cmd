@@ -28,7 +28,7 @@ PAUSE
 pushd E:\
 ECHO %cd%
 PAUSE
-cd E:\wdvp2023-interactive\
+cd E:\WDVP2023\wdvp2023-interactive\
 ECHO %cd%
 PAUSE
 python -m pip install shinylive
