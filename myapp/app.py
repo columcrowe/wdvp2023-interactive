@@ -157,11 +157,10 @@ def server(input, output, session):
     @render.image
     def gif():
         from pathlib import Path
-        dir = Path(__file__).resolve().parent
-        choose = int(input.choose())
-        dir=str(dir)
-        choose=str(choose)
-        img: ImgData = {"src": str(dir + "/gifs/wdv_2023_wjhl10y_"+choose+".gif"), "height": "100%", "width": "75%"}
+        choose = str(int(input.choose()))
+        fname = "wdv_2023_wjhl10y_"+choose+".gif"
+        infile = Path(__file__).parent / fname
+        img: ImgData = {"src": infile, "height": "100%", "width": "75%"}
         return img
 
     @reactive.Effect
