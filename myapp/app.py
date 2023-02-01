@@ -115,6 +115,7 @@ app_ui = ui.page_fluid(
                        ),
                     ui.output_ui("calc"),
                     ui.output_image("gif"),
+                    ui.output_image("image"),
                     style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
                     ),
                     ),
