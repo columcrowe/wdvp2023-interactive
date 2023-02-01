@@ -1,11 +1,11 @@
-python -m pip install rpy2==3.2.2
-
 python -m pip install shiny
 shiny create myapp
-shiny run --reload myapp/app.py
 
 python -m pip install shinylive
 shinylive export myapp docs
+shiny run --reload myapp/app.py
+
+python -m http.server --directory docs 8008
 
 echo "# wdvp2023-interactive" >> README.md
 git init
@@ -18,3 +18,5 @@ git push -u origin main
 git add .
 git commit -m "Fix errors"
 git push -u origin main
+
+git pull https://github.com/columcrowe/wdvp2023-interactive.git
