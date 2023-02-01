@@ -1,0 +1,16 @@
+python -m pip install rpy2==3.2.2
+
+python -m pip install shiny
+shiny create myapp
+shiny run --reload my_app/app.py
+
+python -m pip install shinylive
+shinylive export myapp docs
+
+echo "# wdvp2023-interactive" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/columcrowe/wdvp2023-interactive.git
+git push -u origin main

@@ -1,0 +1,66 @@
+type1,type2,metric,ten_yr_diff
+Tropical Diseases,global deaths,NA,NA
+Tuberculosis,global cases,NA,NA
+Tuberculosis,incidence,"per 100,000 people",-21%
+Tuberculosis,deaths,"per 100,000 people",-15%
+Malaria,Incidence,"per 1,000 people at risk",-11%
+Malaria,deaths,NA,NA
+Polio,Incidence,reported cases,-54%
+HIV / AIDS,Incidence (new cases),NA,NA
+HIV / AIDS,"deaths per 100,000",NA,NA
+HIV / AIDS,total deaths,million deaths,NA
+Countries Who've Eradicated Malaria,no. of countries,NA,51%
+Smoking,% smoking,NA,-17%
+Deaths from Smoking,"deaths per 100,000 people",NA,NA
+Dementia,Incidence,NA,NA
+Health Expenditure,current expenditure per capita (current US$),NA,NA
+Infant Mortality,mortality per 1000 live births,%,-25%
+Maternal Mortality,No of Maternal Deaths,NA,NA
+Renewable Energy,Share of global electricity production,%,44%
+Renewable Energy,Share of global primary energy,%,53%
+Renewable Energy,Global energy-generating capacity,watts per capita,NA
+Wind Power,Share of global electricity production,%,270%
+Wind Power,Total Electricity generated from Wind,Terawatt Hours (Twh) per year,361%
+Wind Power,Share of global primary energy production,%,293%
+Solar Power,Share of global electricity production,%,1903%
+Solar Power,Share of global primary energy,%,2030%
+Photovoltaic Solar Power (PV),Cumulative capacity,Megawatts (MW),1661%
+Photovoltaic Solar Power (PV),Installation Cost,$/KWh,-81%
+Renewables,New Investment,$USD billions,NA
+Nuclear Power,as % of global electricity production,NA,-22%
+Natural Gas,as % of global electricity production,NA,4%
+Oil,as % of global electricity production,NA,-43%
+Coal,as % of global electricity production,NA,-12%
+Extreme Poverty,% not in extreme poverty,%,NA
+Access to Electricity,% of global population,%,8%
+Access to Internet,% of global population,%,107%
+People Using At Least Basic Drinking Water,NA,%,4%
+Access to safely managed Sanitation,% of global population,%,35%
+Life Expectancy,life expectancy at birth,years,3%
+Hunger,prevalence of undernourishment (% of population),%,8%
+Air Pollution,share exposed to air pollution above WHO limits,%,NA
+Road Safety,Road traffic death rate,"per 100,000 population",-9%
+Happy Planet Index,Average Happy Planet Index,NA,6%
+Human Development Index,HDI,NA,5%
+Global Literacy Rate,NA,NA,3%
+Global Female Adult Literacy Rate,NA,%,4%
+Global Male Adult Literacy Rate,NA,%,2%
+Gap between Male & Female Adult Literacy,NA,%,-20%
+% of Girls Not in Primary School,% of girls of primary school age,NA,0%
+% of Boys Not in Primary School,% of boys of primary school age,NA,-2%
+% of Children Not in Primary School,% of kids of primary school age,NA,-1%
+School Enrollment,net primary school enrolment (% children of official school age who are enrolled in school to the population of the corresponding official school age),%,NA
+Girls Secondary School Enrollment,%,NA,NA
+Expected Years of Schooling,The number of years a child of school entrance age can expect to receive if thecurrent age-specific enrollment rates persist throughout the child's years of schooling.,years,9%
+Women's MPs,% of representatives,NA,34%
+Electric Cars,as % of new sales,NA,NA
+Price of Lithium Ion Battery Pack,volume weighted average,$USD 2020,-88%
+Deforestation,land covered by trees,%,-1%
+Biodiversity,Global living planet index (1970=100%),%,NA
+Global CO2 emissions,billion t,NA,NA
+Methane emissions,million t,NA,NA
+Foreign Aid,net official development assistance,$USD bn,52%
+GDP per capita,$USD,NA,17%
+GDP growth per capita,%,NA,-232%
+Economic Freedom,NA,NA,4%
+Economic Growth,GDP,2015 USD,26%
