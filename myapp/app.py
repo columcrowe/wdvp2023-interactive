@@ -1,4 +1,5 @@
 
+
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -12,13 +13,13 @@ from shiny.types import ImgData
 app_ui = ui.page_fluid(
     ui.tags.style(
     """
-    .app-col-custom {
+    .app-col {
     #     border: 1px solid black;
     #     border-radius: 5px;
     #     background-color: #eee;
     #     padding: 8px;
-    #     margin-top: 5px;
-        margin-bottom: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     """
     ),
@@ -27,11 +28,7 @@ app_ui = ui.page_fluid(
         ui.column(
             6,
             ui.div(
-                {"class": "app-col-custom"},
-                # ui.p(
-                #     """
-                #     """,
-                #     ),
+                {"class": "app-col"},
                 #ui.input_slider("choose", "Select Data", 1, 65, 1),
                 ui.input_select("choose", " ", {"1": "Tropical Diseases ~ global deaths",
                                                 "2": "Tuberculosis ~ global cases",
@@ -100,46 +97,41 @@ app_ui = ui.page_fluid(
                                                 "65": "Economic Growth",
                                                 }
                                                 ),
-                style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
+                ui.output_ui("calc"),
+                ui.output_image("gif"),
+                #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
                 ),
             ),
-            ui.column(
-                6,
-                ui.div(
-                    {"class": "app-col-custom"},
-                    # ui.p(
-                    #     """
-                    #     """,
-                    #     ),
-                    ui.output_image("image"),
-                style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
+        ui.column(
+            6,
+            ui.div(
+                {"class": "app-col"},
+                output_widget("spiralPlot"),
+                ui.output_image("image"),
+                #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
                 ),
-                ),
-    ),
-    ui.row(
-            ui.column(
-                6,
-                ui.div(
-                    {"class": "app-col"},
-                    ui.p(
-                       """
-                       """,
-                       ),
-                    ui.output_ui("calc"),
-                    ui.output_image("gif"),
-                    #ui.output_image("image"),
-                    style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
-                    ),
-                    ),
-            ui.column(
-                6,
-                ui.div(
-                    {"class": "app-col"},
-                    output_widget("spiralPlot"),
-                    style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
-                    ),
-                    ),  
             ),
+        ),
+
+    # ui.row(
+    #     ui.column(
+    #         6,
+    #         ui.div(
+    #             {"class": "app-col"},
+    #             ui.output_ui("calc"),
+    #             ui.output_image("gif"),
+    #             #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
+    #             ),
+    #         ),
+    #     ui.column(
+    #         6,
+    #         ui.div(
+    #             {"class": "app-col"},
+    #             ui.output_image("image"),
+    #             #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
+    #             ),
+    #         ),  
+    #     ),
 
 )
 
@@ -160,14 +152,10 @@ def server(input, output, session):
       perc_diff = types["ten_yr_diff"][choose]
       return [perc_diff if perc_diff!='' and perc_diff!='nan' else ""][0]
 
-    #@output
-    #@render.image
-    #def gif() -> ImgData:
-    #  choose = int(input.choose())
-    #  return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
-
     @output
     @render.image
+    #def gif() -> ImgData:
+        #  return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
     def image():
         from pathlib import Path
         dir = Path(__file__).parent 
@@ -220,11 +208,12 @@ def server(input, output, session):
                     x = t_data.x, 
                     y = t_data.y, 
                     z = t_data.z,
-                    connectgaps = True,
+                    connectgaps = False,
                     showlegend = False,
                     text = t_data.label,
                     hoverinfo = "text",
                     mode = 'lines',
+                    line=dict(color=t_data.t_diff*-1,colorscale='rdbu')
                             )
             ],
             layout={'title':type_title+desc+met},
@@ -258,7 +247,7 @@ def server(input, output, session):
                                                            ),
                                                ),
                                  )
-        spiralPlot.layout.height = 500
+        spiralPlot.layout.height = 750
         spiralPlot.layout.width = 750
 
         register_widget("spiralPlot", spiralPlot)
