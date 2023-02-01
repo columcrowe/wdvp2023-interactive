@@ -152,6 +152,14 @@ def server(input, output, session):
     #def gif() -> ImgData:
     #  choose = int(input.choose())
     #  return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
+
+    @output
+    @render.image
+    def image():
+        from pathlib import Path
+        dir = Path(__file__).parent 
+        img: ImgData = {"src": str(dir / "WGS-summit-logo.png"), "width": "150px"}
+        return img
     
     @output
     @render.image
