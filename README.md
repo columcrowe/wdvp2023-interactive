@@ -4,7 +4,7 @@ Interactive multi-view dynamic tool for the World Data Visualization Prize 2023 
 
 This visualization shows yearly differences between the years 2010 and 2020. Blues indicate % decreases, while reds show % increases. The application facilitates viewing changes in variables as time has progressed.
 
-These graphs are based on data from THE WORLD DATA VISUALIZATION PRIZE (WDVP) 2023 and the data file used to create this visualization can be accessed here [here](https://wdvp.worldgovernmentsummit.org/).
+These graphs are based on data from THE WORLD DATA VISUALIZATION PRIZE (WDVP) 2023 and the data file used to create this visualization can be accessed [here](https://wdvp.worldgovernmentsummit.org/).
 
 The inspiration for the format is the ["Climate Spiral"](https://en.wikipedia.org/wiki/Climate_spiral) visualization designed by climate scientist Ed Hawkins from the National Centre for Atmospheric Science, University of Reading.
 
