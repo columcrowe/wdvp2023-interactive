@@ -186,7 +186,7 @@ def server(input, output, session):
         choose = str(int(input.choose()))
         fname = "wdv_2023_wjhl10y_"+choose+".gif"
         infile = Path(__file__).parent / fname
-        img: ImgData = {"src": infile, "height": "100%", "width": "75%"}
+        img: ImgData = {"src": infile, "height": "125%", "width": "75%"}
         return img
 
     @reactive.Effect
@@ -230,7 +230,7 @@ def server(input, output, session):
                     text = t_data.label,
                     hoverinfo = "text",
                     mode = 'lines',
-                    line=dict(color=t_data.t_diff*-1,colorscale='rdbu')
+                    line=dict(color=t_data.t_diff*-1,colorscale='rdbu',width=12)
                             )
             ],
             layout={'title':type_title+desc+met},
