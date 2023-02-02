@@ -2,7 +2,7 @@ Serverless Shinylive application leveraging Python and WebAssembly runs in the w
 
 Interactive multi-view dynamic tool for the World Data Visualization Prize 2023 competition "What Just Happened?" concept and dataset.
 
-This visualization shows yearly differences between the years 2010 and 2020. Blues indicate % decreases, while reds show % increases. The application facilitates viewing changes in variables as time has progressed.
+This visualization shows yearly differences between the years 2010 and 2020. Blue indicates a relative % decrease, while red shows a relative % increase. The application facilitates the analysis of changes in variables as time has progressed.
 
 These graphs are based on data from The World Data Visualization Prize (WDVP) 2023 and the data file used to create this visualization can be accessed [here](https://wdvp.worldgovernmentsummit.org/).
 

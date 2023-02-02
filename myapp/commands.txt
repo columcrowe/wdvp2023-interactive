@@ -1,4 +1,4 @@
-python -m pip install shiny
+pushd E:python -m pip install shiny
 shiny create myapp
 
 python -m pip install shinylive

@@ -120,12 +120,12 @@ app_ui = ui.page_fluid(
                 {"class": "app-col"},
                 ui.p(
                 """
-                Interactive multi-view dynamic tool for the World Data Visualization Prize 2023 competition What Just Happened? concept and dataset.
+                Interactive multi-view dynamic tool for the World Data Visualization Prize 2023 competition 'What Just Happened?' concept and dataset.
                 """
                 ),
                 ui.p(
                 """
-                This visualization shows yearly differences between the years 2010 and 2020. Blues indicate % decreases, while reds show % increases. The application facilitates viewing changes in variables as time has progressed.
+                This visualization shows yearly differences between 2010 and 2020. Blue indicates a relative % decrease, while red shows a relative % increase. The application facilitates the analysis of changes in variables as time has progressed.
                 """
                 ),
                 ui.p(
@@ -135,7 +135,7 @@ app_ui = ui.page_fluid(
                 ),
                 ui.p(
                 """
-                The inspiration for the format is the Climate Spiral visualization designed by climate scientist Ed Hawkins from the National Centre for Atmospheric Science, University of Reading.
+                The inspiration for the format is the 'Climate Spiral' visualization designed by climate scientist Ed Hawkins from the National Centre for Atmospheric Science, University of Reading.
                 """
                 ),
                 #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
@@ -172,7 +172,7 @@ def server(input, output, session):
     @output
     @render.image
     #def gif() -> ImgData:
-        #  return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "100%", "width": "75%"}
+        #  return {"src": "gifs/wdv_2023_wjhl10y_"+str(choose)+".gif", "height": "125%", "width": "75%"}
     def image():
         from pathlib import Path
         dir = Path(__file__).parent 
@@ -233,6 +233,21 @@ def server(input, output, session):
                     line=dict(color=t_data.t_diff*-1,colorscale='rdbu',width=12)
                             )
             ],
+            # data=[
+            #     go.Scatter(
+            #         x = t_data.x, 
+            #         y = t_data.y,
+            #         connectgaps = False,
+            #         showlegend = False,
+            #         text = t_data.label,
+            #         hoverinfo = "text",
+            #         mode = 'markers+lines',
+            #         marker=dict(color=t_data.t_diff*-1,colorscale='rdbu',showscale=True),
+            #         line_color='white',
+            #         fill='tonone',
+            #         fillcolor='black'
+            #                 )
+            # ],
             layout={'title':type_title+desc+met},
         )
         spiralPlot.update_layout(scene = dict(xaxis = dict(backgroundcolor="rgb(0, 0, 0)",
