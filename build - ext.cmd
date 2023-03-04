@@ -31,6 +31,8 @@ PAUSE
 cd E:\WDVP2023\wdvp2023-interactive\
 ECHO %cd%
 PAUSE
+python -m pip install shiny
+shiny create myapp
 python -m pip install shinylive
 shinylive export myapp docs
 shiny run --reload myapp/app.py

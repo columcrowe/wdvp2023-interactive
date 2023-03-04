@@ -1,4 +1,5 @@
-pushd E:python -m pip install shiny
+pushd E:
+python -m pip install shiny
 shiny create myapp
 
 python -m pip install shinylive
@@ -7,6 +8,7 @@ shiny run --reload myapp/app.py
 
 python -m http.server --directory docs 8008
 
+cd E:\WDVP2023\wdvp2023-interactive
 echo "# wdvp2023-interactive" >> README.md
 git init
 git add README.md

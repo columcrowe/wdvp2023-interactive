@@ -98,7 +98,7 @@ app_ui = ui.page_fluid(
                                                 }
                                                 ),
                 ui.output_ui("calc"),
-                ui.output_image("gif"),
+                #ui.output_image("gif"),
                 #style=css(display="flex", justify_content="center", align_items="center", gap="2rem"),
                 ),
             ),
@@ -179,15 +179,15 @@ def server(input, output, session):
         img: ImgData = {"src": str(dir / "WGS-summit-logo.png"), "width": "150px"}
         return img
     
-    @output
-    @render.image
-    def gif():
-        from pathlib import Path
-        choose = str(int(input.choose()))
-        fname = "wdv_2023_wjhl10y_"+choose+".gif"
-        infile = Path(__file__).parent / fname
-        img: ImgData = {"src": infile, "height": "125%", "width": "75%"}
-        return img
+    #@output
+    #@render.image
+    #def gif():
+    #    from pathlib import Path
+    #    choose = str(int(input.choose()))
+    #    fname = "wdv_2023_wjhl10y_"+choose+".gif"
+    #    infile = Path(__file__).parent / fname
+    #    img: ImgData = {"src": infile, "height": "125%", "width": "75%"}
+    #    return img
 
     @reactive.Effect
     def _():
